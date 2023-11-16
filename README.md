@@ -39,12 +39,15 @@ It has a pre-installed app that was created from:
     firebase init
     ```
    Set the build directory to `build/web` and choose the hosting emulator.
-2. **Add Flutter app dependencies**:
+2. **Add Flutterfire dependencies**:
     ```bash
     dart pub global activate flutterfire_cli
-    && flutter pub add firebase_core
     ```
-3. **Configure Flutter app with Firebase**:
+3. **Add Firebase core Flutter package**:
+    ```bash
+    flutter pub add firebase_core
+    ```
+4. **Configure Flutter app with Firebase**:
     ```bash
     flutterfire configure --platforms web
     ```
