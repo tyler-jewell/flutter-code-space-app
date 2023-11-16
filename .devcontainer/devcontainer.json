@@ -1,0 +1,49 @@
+{
+	"name": "Flutter Code Space Container",
+	"image": "ghcr.io/cirruslabs/flutter:stable",
+	"postCreateCommand": {
+		"set pub cache path": "echo 'export PATH=\\\"$PATH:$HOME/.pub-cache/bin\\\"' >> ~/.bashrc && source ~/.bashrc",
+		"flutter cache": "flutter precache",
+		"flutterfire cli": "dart pub global activate flutterfire_cli",
+		"activate flutterfire": "dart pub global activate flutterfire_cli",
+		"flutter clean and pub get": "flutter clean && flutter pub get"
+	},
+	"forwardPorts": [
+		8080
+	],
+	"portsAttributes": {
+		"8080": {
+			"label": "Flutter Web Application",
+			"onAutoForward": "openPreview"
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
+			"packages": "nano, git"
+		},
+		"ghcr.io/devcontainers-contrib/features/firebase-cli:2": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dart-code.flutter",
+				"ms-python.python",
+				"streetsidesoftware.code-spell-checker",
+				"ms-python.vscode-pylance",
+				"ms-python.pylint",
+				"ms-azuretools.vscode-docker",
+				"chflick.firecode",
+				"toba.vsfire",
+				"github.copilot",
+				"github.copilot-chat",
+				"figma.figma-vscode-extension",
+				"ms-vscode-remote.remote-containers",
+				"circlecodesolution.ccs-flutter-color",
+				"romanrei.material-dark",
+				"redhat.vscode-yaml",
+				"github.vscode-github-actions"
+			]
+		}
+	}
+}
